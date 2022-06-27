@@ -19,7 +19,8 @@ payRouter.post('/payment',
             Cvv, Amount)
     if (isValidCard) {
         const jsonContent = JSON.stringify(isValidCard)
-        res.status(201).send(jsonContent)
+        res.send(jsonContent)
+        // res.status(201).send(jsonContent)
     } else (
         res.sendStatus(400)
     )
