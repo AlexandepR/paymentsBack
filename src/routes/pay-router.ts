@@ -5,7 +5,7 @@ export const payRouter = Router({})
 
 payRouter.get('',
     (req: Request, res: Response) => {
-        res.status(201).send(payments)
+        res.send(payments)
     }
     )
 
