@@ -3,6 +3,7 @@ import {paysRepository} from "../repositories/pay-repository";
 
 export const payRouter = Router({})
 
+
 payRouter.post('/',
     (req: Request, res: Response) => {
     const {CardNumber, ExpDate, Cvv, Amount} = req.body
