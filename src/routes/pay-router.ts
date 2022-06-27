@@ -16,7 +16,8 @@ payRouter.post('/payment',
         Cvv, Amount} = req.body
         const isValidCard = paysRepository.postPayRouter(CardNumber,
             // ExpDate,
-            Cvv, Amount)
+            // Cvv, Amount
+        )
     if (isValidCard) {
         const jsonContent = JSON.stringify(isValidCard)
         // res.send(jsonContent)
