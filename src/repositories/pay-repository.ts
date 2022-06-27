@@ -11,19 +11,18 @@ export let payments = [
 export const paysRepository = {
     postPayRouter(CardNumber: string,
                   // ExpDate: string,
-                  // Cvv: string, Amount: number
+                  Cvv: string, Amount: number
     ) {
         const card = cards.find(c => c.CardNumber === CardNumber)
             if (card
-                // &&
+                &&
                 // card.ExpDate === ExpDate&&
-                // card.Cvv === Cvv
+                card.Cvv === Cvv
             )
         {
             const newPay = {
                 RequestId: +(new Date()),
-                Amount: 123
-                // Amount: Amount
+                Amount: Amount
             }
             payments.push(newPay)
             return newPay
