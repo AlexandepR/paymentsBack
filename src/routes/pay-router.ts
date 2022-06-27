@@ -1,10 +1,15 @@
 import { Request, Response, Router } from "express";
-import {paysRepository} from "../repositories/pay-repository";
+import {payments, paysRepository} from "../repositories/pay-repository";
 
 export const payRouter = Router({})
 
+payRouter.get('',
+    (req: Request, res: Response) => {
+        res.status(201).send(payments)
+    }
+    )
 
-payRouter.post('',
+payRouter.post('/payment',
     (req: Request, res: Response) => {
     const {CardNumber, ExpDate, Cvv, Amount} = req.body
         const isValidCard = paysRepository.postPayRouter(CardNumber, ExpDate, Cvv, Amount)
