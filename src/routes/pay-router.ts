@@ -5,17 +5,15 @@ export const payRouter = Router({})
 
 payRouter.get('',
     (req: Request, res: Response) => {
-        res.send(payments)
-    }
-    )
+        res.send(payments)})
 
 payRouter.post('/payment',
     (req: Request, res: Response) => {
     const {CardNumber,
-        // ExpDate,
+        ExpDate,
         Cvv, Amount} = req.body
         const isValidCard = paysRepository.postPayRouter(CardNumber,
-            // ExpDate,
+            ExpDate,
             Cvv, Amount
         )
     if (isValidCard) {
