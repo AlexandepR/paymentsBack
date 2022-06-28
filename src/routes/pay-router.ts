@@ -21,7 +21,7 @@ payRouter.post('/payment',
         res.send(jsonContent)
         res.status(201).send(jsonContent)
     } else (
-        res.sendStatus(400).send({
+        res.status(400).send({
             errorsMessages: [{
                 message: "Invalid credit card",
                 field: "payment could not be made"
