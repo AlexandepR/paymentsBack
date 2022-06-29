@@ -22,7 +22,7 @@ payRouter.post('/payment',
         res.status(401).send({
             errorsMessages: [{
                 message: "Invalid credit card",
-                field: "payment could not be"
+                field: "payment could not be completed"
             }],
         })
     )
