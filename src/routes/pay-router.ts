@@ -1,6 +1,5 @@
 import { Request, Response, Router } from "express";
 import {paysRepository} from "../repositories/pay-memory-repository";
-import {payments} from "../repositories/pay-memory-repository";
 
 export const payRouter = Router({})
 
@@ -23,7 +22,7 @@ payRouter.post('/payment',
         res.status(401).send({
             errorsMessages: [{
                 message: "Invalid credit card",
-                field: "payment could not be made"
+                field: "payment could not be"
             }],
         })
     )
